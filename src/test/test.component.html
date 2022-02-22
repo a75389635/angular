@@ -1,0 +1,21 @@
+
+<ng-container [formGroup]="form">
+    <input [formControlName]="'id'" />
+    <button (click) = "getAllAttractions()"> 查詢 </button>
+</ng-container>
+
+
+<ng-container *ngIf ="data">
+
+    <div>
+        total: {{ data?.total }}
+    </div>
+
+    地點: 
+
+    <div *ngFor="let d of data?.data; let i = index;">
+        {{ d.name }}
+    </div>
+
+</ng-container>
+
